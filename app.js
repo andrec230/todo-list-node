@@ -3,7 +3,7 @@ const { create, update, deleteData, list } = require('./todo/todo')
 const colors = require('colors')
 
 
-// console.log(argv)
+console.log(argv)
 
 let command = argv._[0]
 
@@ -19,7 +19,7 @@ switch (command) {
             console.log(deleteData(argv.description))
             break;
     case 'list':  
-        const todoList = list()
+        const todoList = list(argv.complete)
         if ( todoList.length == 0 ) {
             console.log('There is not todos.'.green)
         } else {

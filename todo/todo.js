@@ -13,9 +13,11 @@ const create = (description) => {
     return todo
 } 
 
-const list = () => {
+const list = (complete = true) => {
     loadData()
-    return todoList
+    return todoList.filter((todo) => todo.complete == complete)
+
+    
 }
 
 const update = (description, complete = true) => {
